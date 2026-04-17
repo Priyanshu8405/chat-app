@@ -28,7 +28,8 @@ export const ChatProvider = ({ children }) => {
   useEffect(() => {
     if (!isAuthenticated || !user) return;
 
-    const socket = io('http://localhost:5000', {
+    const socketUrl = import.meta.env.MODE === 'production' ? '/' : 'http://localhost:5000';
+    const socket = io(socketUrl, {
       withCredentials: true,
     });
 
