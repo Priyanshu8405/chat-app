@@ -34,7 +34,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/messages', messageRoutes);
 
 // Health check
-app.get('/', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({ message: 'WhatsApp Lite API is running' });
 });
 
